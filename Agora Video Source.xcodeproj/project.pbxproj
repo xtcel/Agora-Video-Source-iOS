@@ -164,6 +164,7 @@
 				TargetAttributes = {
 					074526E31E9CAB040054D2D4 = {
 						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 48TB6ZZL5S;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
@@ -335,7 +336,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Yuhua Gong (TH5SJ72C94)";
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -346,7 +348,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.Agora-Video-Source";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "a1037fd5-29b7-4531-a19c-8f37f2f15489";
+				PROVISIONING_PROFILE_SPECIFIER = "AgoraIODev2016+";
 				SWIFT_OBJC_BRIDGING_HEADER = "Agora Video Source/VideoChat/Agora Video Source-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -358,7 +361,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Agora Lab, Inc. (48TB6ZZL5S)";
+				DEVELOPMENT_TEAM = 48TB6ZZL5S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,7 +373,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.agora.Agora-Video-Source";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "e2c40d34-a180-447e-8c83-9be2f3c55c87";
+				PROVISIONING_PROFILE_SPECIFIER = AgoraIODistribution;
 				SWIFT_OBJC_BRIDGING_HEADER = "Agora Video Source/VideoChat/Agora Video Source-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
