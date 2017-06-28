@@ -65,6 +65,10 @@ class MyVideoCapture: NSObject {
         }
     }
     
+    deinit {
+        captureSession.stopRunning()
+    }
+    
     func startCapture(ofCamera camera: Camera) {
         guard let currentOutput = currentOutput else {
             return
@@ -73,19 +77,22 @@ class MyVideoCapture: NSObject {
         currentCamera = camera
         currentOutput.setSampleBufferDelegate(self, queue: captureQueue)
         
-        captureQueue.async { [unowned self] in
-            self.changeCaptureDevice(toIndex: camera.rawValue, ofSession: self.captureSession)
-            self.captureSession.beginConfiguration()
-            self.captureSession.canSetSessionPreset(AVCaptureSessionPreset640x480)
-            self.captureSession.commitConfiguration()
-            self.captureSession.startRunning()
+        captureQueue.async { [weak self] in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.changeCaptureDevice(toIndex: camera.rawValue, ofSession: strongSelf.captureSession)
+            strongSelf.captureSession.beginConfiguration()
+            strongSelf.captureSession.canSetSessionPreset(AVCaptureSessionPreset640x480)
+            strongSelf.captureSession.commitConfiguration()
+            strongSelf.captureSession.startRunning()
         }
     }
     
     func stopCapture() {
         currentOutput?.setSampleBufferDelegate(nil, queue: nil)
-        captureQueue.async { [unowned self] in
-            self.captureSession.stopRunning()
+        captureQueue.async { [weak self] in
+            self?.captureSession.stopRunning()
         }
     }
     
